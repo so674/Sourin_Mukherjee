@@ -99,7 +99,11 @@
       -webkit-text-size-adjust: none;
       text-size-adjust: none;
     }
-
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+    border: 2px solid red;
     body {
       min-height: 100dvh;
       font-family: var(--font-body);
@@ -580,6 +584,9 @@
     }
 
     .contact-link {
+       width: 100%;
+       overflow-wrap: break-word;
+       word-break: break-word;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -624,7 +631,16 @@
       .container {
         width: min(calc(100% - 1.25rem), var(--content-default));
       }
-
+  .contact-card {
+    width: 100%;
+    overflow: hidden;
+}
+      @media (max-width: 640px) {
+    .contact-link {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
       .hero-copy,
       .hero-panel,
       .feature-card,
