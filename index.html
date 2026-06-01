@@ -38,15 +38,15 @@
       --space-20: 5rem;
       --space-24: 6rem;
       --space-32: 8rem;
---color-bg: #ffffff;
---color-surface: #ffffff;
---color-surface-2: #f8fafc;
---color-surface-offset: #f1f5f9;
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #f0ede7;
       --color-surface-dynamic: #e7e2db;
-      --color-border: #e5e7eb;
+      --color-border: #d4d1ca;
       --color-divider: #ddd9d1;
-      --color-text: #111827;
---color-text-muted: #4b5563;
+      --color-text: #25211d;
+      --color-text-muted: #706d66;
       --color-text-faint: #a29d95;
       --color-text-inverse: #f9f8f4;
       --color-primary: #0f6b67;
@@ -662,17 +662,6 @@
         animation-iteration-count: 1 !important;
       }
     }
-    html[data-theme="light"],
-html[data-theme="light"] body {
-  background: #f7f6f2 !important;
-  color: #25211d !important;
-}
-
-html[data-theme="dark"],
-html[data-theme="dark"] body {
-  background: #151412 !important;
-  color: #e4dfd7 !important;
-}
   </style>
 </head>
 
@@ -968,7 +957,7 @@ html[data-theme="dark"] body {
               href="mailto:sourinm81@gmail.com"><span>Email</span><span>sourinm81@gmail.com</span></a>
             <a class="contact-link" href="tel:+918389050609"><span>Phone</span><span>+91 83890 50609</span></a>
             <!-- <a class="contact-link" href="#top"><span></span><span>Kolkata, India</span></a> -->
-            <a class="contact-link" href="https://codolio.com/profile/Sourinmukherjee" target="_blank"
+             <a class="contact-link" href="https://codolio.com/profile/Sourinmukherjee" target="_blank"
               rel="noopener noreferrer">
               <span class="contact-title">Codolio</span>
               <span class="contact-url">codolio.com/profile/Sourinmukherjee</span>
@@ -1001,7 +990,7 @@ html[data-theme="dark"] body {
     (function () {
       const button = document.querySelector('[data-theme-toggle]');
       const root = document.documentElement;
-      let theme =   localStorage.getItem('theme') ||   (window.matchMedia('(prefers-color-scheme: dark)').matches     ? 'dark'     : 'light');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
       function renderIcon(mode) {
         button.innerHTML = mode === 'dark'
@@ -1013,21 +1002,11 @@ html[data-theme="dark"] body {
       root.setAttribute('data-theme', theme);
       renderIcon(theme);
 
-button.addEventListener('click', function () {
-  theme = theme === 'dark' ? 'light' : 'dark';
-
-  console.log("Theme:", theme);
-
-  root.setAttribute('data-theme', theme);
-
-  document.body.style.background =
-    theme === 'dark' ? '#151412' : '#f7f6f2';
-
-  document.body.style.color =
-    theme === 'dark' ? '#e4dfd7' : '#25211d';
-
-  renderIcon(theme);
-});
+      button.addEventListener('click', function () {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', theme);
+        renderIcon(theme);
+      });
     }());
   </script>
 </body>
