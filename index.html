@@ -1019,10 +1019,12 @@ button.addEventListener('click', function () {
   console.log("Theme:", theme);
 
   root.setAttribute('data-theme', theme);
-  
 
-  document.documentElement.style.backgroundColor =
+  document.body.style.background =
     theme === 'dark' ? '#151412' : '#f7f6f2';
+
+  document.body.style.color =
+    theme === 'dark' ? '#e4dfd7' : '#25211d';
 
   renderIcon(theme);
 });
