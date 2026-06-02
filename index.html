@@ -666,25 +666,39 @@ z-index: 1000;
     }
 @media (max-width: 768px) {
     .header {
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        backdrop-filter: blur(12px);
-        background: rgba(21, 20, 18, 0.9);
+ position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(21, 20, 18, 0.9);
     }
-.nav-links {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 16px;
+  .nav-links {
     width: 100%;
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    order: 3;
+  }
+    .container.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+    .brand {
+    flex: 1;
+  }
+  
+  .nav-actions {
+    flex-shrink: 0;
+  }
+
 
 .nav-links a {
     white-space: nowrap;
+   font-size: 0.9rem;
 }
 
     body {
