@@ -102,6 +102,7 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  padding-top: 90px;
 }
     border: 2px solid red;
     body {
@@ -210,12 +211,12 @@ html, body {
     }
 
     .header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--color-bg) 84%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(21, 20, 18, 0.9);
+}
     }
 
     .nav {
@@ -662,7 +663,21 @@ html, body {
         grid-template-columns: 1fr;
       }
     }
+@media (max-width: 768px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        backdrop-filter: blur(12px);
+        background: rgba(21, 20, 18, 0.9);
+    }
 
+    body {
+        padding-top: 90px;
+    }
+}
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
