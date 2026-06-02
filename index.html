@@ -673,10 +673,18 @@ z-index: 1000;
         backdrop-filter: blur(12px);
         background: rgba(21, 20, 18, 0.9);
     }
-  .nav-links {
+.nav-links {
     display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.nav-links a {
+    white-space: nowrap;
 }
 
     body {
